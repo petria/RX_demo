@@ -5,6 +5,9 @@ import rx.Single;
 
 public interface CountryCodesService {
 
+    /**
+     * @return country codes fetched from https://restcountries.eu/ service
+     */
     Single<CountryCodesResponse> getCountryCodes();
 
 }
