@@ -30,7 +30,7 @@ public class CountryCodeToCapitalRestController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public Single<ResponseEntity<CountryCodeToCapitalWebResponse>> getCapital(@PathVariable(value = "code") String code) {
-        return codeToCapitalService.getCountryCodes(code)
+        return codeToCapitalService.getCapitalFromCountryCode(code)
                 .subscribeOn(Schedulers.io())
                 .map(countryCodesWebResponse -> ResponseEntity.ok(toCountryCodeToCapitalWebResponse(countryCodesWebResponse)));
     }

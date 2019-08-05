@@ -31,7 +31,7 @@ public class CountryCodesServiceImpl implements CountryCodesService {
                 singleSubscriber.onSuccess(countryCodesResponse);
             } catch (IOException e) {
                 log.error("country code fetch fail", e);
-                singleSubscriber.onError(new InternalError());
+                singleSubscriber.onError(new InternalError("country list fetch fail"));
             }
 
         });

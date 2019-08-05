@@ -5,6 +5,6 @@ import rx.Single;
 
 public interface CountryCodeToCapitalService {
 
-    Single<CountryCodeToCapitalResponse> getCountryCodes(String code);
+    Single<CountryCodeToCapitalResponse> getCapitalFromCountryCode(String code);
 
 }

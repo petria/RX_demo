@@ -17,18 +17,16 @@ import java.io.IOException;
 public class CountryCodeToCapitalServiceImpl implements CountryCodeToCapitalService {
 
     @Override
-    public Single<CountryCodeToCapitalResponse> getCountryCodes(String code) {
+    public Single<CountryCodeToCapitalResponse> getCapitalFromCountryCode(String code) {
         return Single.create(singleSubscriber -> {
             try {
                 CountryCodeToCapitalResponse countryCodesResponse = fetchCodes(code);
                 singleSubscriber.onSuccess(countryCodesResponse);
             } catch (IOException e) {
-                log.error("country code fetch fail", e);
-                singleSubscriber.onError(new InternalError());
+                log.error("country capital from code fetch fail: {}", code, e);
+                singleSubscriber.onError(new InternalError("Country capital fetch fail"));
             }
-
         });
-
     }
 
     private CountryCodeToCapitalResponse fetchCodes(String code) throws IOException {
