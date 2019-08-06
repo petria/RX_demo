@@ -47,9 +47,11 @@ public class CountryCodesServiceImplTest {
     }
 
     private Alpha2CodeJson[] createMockResult() {
-        Alpha2CodeJson[] array = new Alpha2CodeJson[1];
+        Alpha2CodeJson[] array = new Alpha2CodeJson[2];
         array[0] = new Alpha2CodeJson();
-        array[0].setAlpha2Code("CODE");
+        array[0].setAlpha2Code("CODE1");
+        array[1] = new Alpha2CodeJson();
+        array[1].setAlpha2Code("CODE2");
         return array;
     }
 
